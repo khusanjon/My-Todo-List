@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo List</title>
+    <!-- CSS and bootstrap connect to html5 -->
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/font/font-awesome/all.min.css">
+    <link rel="stylesheet" href="/assets/font/font-awesome/fontawesome.min.css">   
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="alert alert-success"><h3> Mening vazifalarim ro'yxati dastri <span class="fa-regular fa-address-book"></span></h3></div>
+         <!--row bg-success, bg-danger, bg-warning, bg-info qisimlarga ajratib beradi umuniy razmeri "col" 12 teng-->
+        <div class="row">
+            <div class="col-4 bg-succes">
+            <form id="todoForm">
+                <div class="card"> <!-- card, card-titel, card-body  forma yasash uchun foydalanamiz -->
+                    <div class="card-title"><h5><span class="fa fa-pencil fa-fw"></span> Vazifalar kritish va taxrirlash formasi </h5></div>
+                    <div class="card-body">
+                        <div class="edit-form">
+                            <div class="form-group">
+                                <label class="control-label"> Vazifalar nomi </label>
+                                <textarea required class="form-control" name="todoName" placeholder="Ma'lumot kriting"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col">  
+                                    <div class="form-group">
+                                        <label class="control-label"> Vasifani boshlash sanasi </label>
+                                        <input required type="date" class="form-control" name="todoDeadline" placeholder="Sanani kiriting">
+                                    </div>
+                                </div> 
+                                <div class="col">  
+                                    <div class="form-group">
+                                        <label class="control-label">Soati</label>
+                                        <input required type="time" class="form-control" name="todoDeadlineTime" placeholder="Vaqtni kiriting">
+                                    </div>
+                                </div> 
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button id="addBtn" class="btn btn-primary"><span class="fa fa-clipboard" aria-hidden="true"></span> Qo'shish</button>
+                        <button id="editBtn" data-id="" class="btn btn-success"><span class="fa fa-edit"></span> Taxrirlash</button>
+                        <button onclick="clearForm()" class="btn btn-danger"><span class="fa fa-eraser" aria-hidden="true"></span> Tozalash</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+
+            <div class="col-8">
+
+                <h2> <i class="fa fa-table" aria-hidden="true"></i> Topshiriqlar ro'yxati</h2>
+                <table class="table table-bordered table-conditional table-stripped">
+                    <thead>
+                        <tr>
+                            <th> № </th>
+                            <th> Nomi </th>
+                            <th> Vasifani boshlash </th>
+                            <th> Vazifani tugatish </th>
+                            <th> Holati </th>
+                            <th> Harakat </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+     <!-- JavaScript Bundle with Popper -->
+     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+     <script src="/js/main.js"></script>
+</body>
+</html>
